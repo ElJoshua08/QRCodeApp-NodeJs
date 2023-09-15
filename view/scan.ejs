@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code</title>
+
+  <link rel="stylesheet" href="scan.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9ebca8b63b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <img src='<%= qr_code %>' alt="QR Code" class="qr-code" />
+    <div class="btns">
+      <a href="/" role="button" class="btn btn-primary">Back</a>
+      <i class="fa-solid fa-download download-btn"></i>
+    </div>
+  </div>
+
+  <script>
+    const img = document.querySelector(".qr-code")
+    const download_btn = document.querySelector(".download-btn")
+
+    console.log(img.src)
+
+    download_btn.onclick = () => {
+      // Create an anchor element
+      var a = document.createElement('a');
+
+      // Set the anchor's href to the image source
+      a.href = img.src;
+
+      // Set the anchor's download attribute to the desired file name
+      a.download = 'QRCode.jpg';
+
+      // Trigger a click event on the anchor element to initiate the download
+      a.click();
+    }
+  </script>
+</body>
+
+</html>
