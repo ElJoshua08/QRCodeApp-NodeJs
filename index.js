@@ -5,7 +5,7 @@ const qrcode = require("qrcode");
 
 const app = express();
 
-const port = process.env.port || 3000;
+const port = process.env.port || 8001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
